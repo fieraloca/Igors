@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterSessionsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Event">
+    <Key>
+      <PropertyRef Name="EventID" />
+    </Key>
+    <Property Name="EventID" Type="Int64" Nullable="false" />
+    <Property Name="EventName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EventTime" Type="DateTime" Precision="3" />
+    <Property Name="City" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="LocationVenue" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Teachers" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Sponsors" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="InterSessionsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Events" EntityType="Self.Event" />
+  </EntityContainer>
+</Schema>
