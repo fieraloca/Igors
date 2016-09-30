@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\glove\Documents\Visual Studio 2015\Projects\InterSessions\InterSessions\Models\InterSessionModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\glove\Documents\COFRE_WINX05\REPOS\GITHUB\IGORS\Source\InterSessions\Models\InterSessionModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

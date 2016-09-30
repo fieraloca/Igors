@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="EventID" />
     </Key>
-    <Property Name="EventID" Type="bigint" Nullable="false" />
+    <Property Name="EventID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EventName" Type="nvarchar(max)" />
     <Property Name="EventTime" Type="datetime" />
     <Property Name="City" Type="nvarchar" MaxLength="128" />
@@ -13,8 +13,38 @@
     <Property Name="Teachers" Type="nvarchar" MaxLength="128" />
     <Property Name="Sponsors" Type="nvarchar" MaxLength="128" />
     <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PastEvent" Type="bit" />
+    <Property Name="IsCancelled" Type="bit" />
   </EntityType>
+  <EntityType Name="Rsvp">
+    <Key>
+      <PropertyRef Name="RsvpID" />
+    </Key>
+    <Property Name="RsvpID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventID" Type="bigint" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Rsvp_Event">
+    <End Role="Event" Type="Self.Event" Multiplicity="1" />
+    <End Role="Rsvp" Type="Self.Rsvp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="Rsvp">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="InterSessionsModelStoreContainer">
     <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rsvp" EntityType="Self.Rsvp" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Rsvp_Event" Association="Self.FK_Rsvp_Event">
+      <End Role="Event" EntitySet="Event" />
+      <End Role="Rsvp" EntitySet="Rsvp" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

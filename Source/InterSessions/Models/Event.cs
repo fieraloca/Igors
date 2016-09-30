@@ -14,6 +14,12 @@ namespace InterSessions.Models
     
     public partial class Event
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Event()
+        {
+            this.Rsvps = new HashSet<Rsvp>();
+        }
+    
         public long EventID { get; set; }
         public string EventName { get; set; }
         public Nullable<System.DateTime> EventTime { get; set; }
@@ -23,5 +29,10 @@ namespace InterSessions.Models
         public string Teachers { get; set; }
         public string Sponsors { get; set; }
         public string Description { get; set; }
+        public Nullable<bool> PastEvent { get; set; }
+        public Nullable<bool> IsCancelled { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Rsvp> Rsvps { get; set; }
     }
 }

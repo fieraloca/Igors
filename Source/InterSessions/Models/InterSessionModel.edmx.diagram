@@ -5,7 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="643265a9046a49eab6530b961b778f98" Name="Diagram1">
-        <EntityTypeShape EntityType="InterSessionsModel.Event" Width="1.5" PointX="1" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterSessionsModel.Event" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="InterSessionsModel.Rsvp" Width="1.5" PointX="4.125" PointY="1" />
+        <AssociationConnector Association="InterSessionsModel.FK_Rsvp_Event" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

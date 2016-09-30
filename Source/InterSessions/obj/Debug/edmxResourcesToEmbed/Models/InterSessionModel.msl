@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Events">
       <EntityTypeMapping TypeName="InterSessionsModel.Event">
         <MappingFragment StoreEntitySet="Event">
+          <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+          <ScalarProperty Name="PastEvent" ColumnName="PastEvent" />
           <ScalarProperty Name="EventID" ColumnName="EventID" />
           <ScalarProperty Name="EventName" ColumnName="EventName" />
           <ScalarProperty Name="EventTime" ColumnName="EventTime" />
@@ -13,6 +15,18 @@
           <ScalarProperty Name="Teachers" ColumnName="Teachers" />
           <ScalarProperty Name="Sponsors" ColumnName="Sponsors" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rsvps">
+      <EntityTypeMapping TypeName="InterSessionsModel.Rsvp">
+        <MappingFragment StoreEntitySet="Rsvp">
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="EventID" ColumnName="EventID" />
+          <ScalarProperty Name="RsvpID" ColumnName="RsvpID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -13,8 +13,40 @@
     <Property Name="Teachers" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="Sponsors" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PastEvent" Type="Boolean" />
+    <Property Name="IsCancelled" Type="Boolean" />
+    <NavigationProperty Name="Rsvps" Relationship="InterSessionsModel.FK_Rsvp_Event" FromRole="Event" ToRole="Rsvp" />
   </EntityType>
   <EntityContainer Name="InterSessionsEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Events" EntityType="Self.Event" />
+    <EntitySet Name="Rsvps" EntityType="InterSessionsModel.Rsvp" />
+    <AssociationSet Name="FK_Rsvp_Event" Association="InterSessionsModel.FK_Rsvp_Event">
+      <End Role="Event" EntitySet="Events" />
+      <End Role="Rsvp" EntitySet="Rsvps" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Rsvp">
+    <Key>
+      <PropertyRef Name="RsvpID" />
+    </Key>
+    <Property Name="RsvpID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventID" Type="Int64" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Event" Relationship="InterSessionsModel.FK_Rsvp_Event" FromRole="Rsvp" ToRole="Event" />
+  </EntityType>
+  <Association Name="FK_Rsvp_Event">
+    <End Type="InterSessionsModel.Event" Role="Event" Multiplicity="1" />
+    <End Type="InterSessionsModel.Rsvp" Role="Rsvp" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event">
+        <PropertyRef Name="EventID" />
+      </Principal>
+      <Dependent Role="Rsvp">
+        <PropertyRef Name="EventID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

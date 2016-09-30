@@ -26,5 +26,6 @@ namespace InterSessions.Models
         }
     
         public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<Rsvp> Rsvps { get; set; }
     }
 }
