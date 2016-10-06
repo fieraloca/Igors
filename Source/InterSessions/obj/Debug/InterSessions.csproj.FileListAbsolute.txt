@@ -85,3 +85,4 @@ C:\Users\glove\Documents\COFRE_WINX05\REPOS\GITHUB\IGORS\Source\InterSessions\bi
 C:\Users\glove\Documents\COFRE_WINX05\REPOS\GITHUB\IGORS\Source\InterSessions\bin\Newtonsoft.Json.xml
 C:\Users\glove\Documents\COFRE_WINX05\REPOS\GITHUB\IGORS\Source\InterSessions\obj\Debug\InterSessions.dll
 C:\Users\glove\Documents\COFRE_WINX05\REPOS\GITHUB\IGORS\Source\InterSessions\obj\Debug\InterSessions.pdb
+C:\Users\glove\Documents\COFRE_WINX05\REPOS\GITHUB\IGORS\Source\InterSessions\obj\Debug\InterSessions.csprojResolveAssemblyReference.cache
