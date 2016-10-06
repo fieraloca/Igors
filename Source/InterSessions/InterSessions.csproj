@@ -173,8 +173,14 @@
       <DependentUpon>InterSessionModel.edmx</DependentUpon>
       <LastGenOutput>InterSessionModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Resources\Pictures\Gabriel Ruiz_1.jpg" />
-    <Content Include="Resources\Pictures\Gabriel Ruiz_2.jpg" />
+    <Content Include="Resources\Pictures\cd.png" />
+    <Content Include="Resources\Pictures\IntersessionsBackgroundBanner.jpg" />
+    <Content Include="Resources\Pictures\IntersessionsBanner.jpg" />
+    <Content Include="Resources\Pictures\IntersessionsTextPNG.png" />
+    <Content Include="Resources\Pictures\PNG %281%29 copy.png" />
+    <Content Include="Resources\Pictures\PNG %281%29.png" />
+    <Content Include="Resources\Pictures\PNG copy.png" />
+    <Content Include="Resources\Pictures\PNG.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\InterSessionModel.edmx">
